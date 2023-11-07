@@ -1,5 +1,3 @@
-import '@testing-library/cypress/add-commands'
-
 // TODO: make styles work
 // import '../../app/globals.css' //
 import './commands'

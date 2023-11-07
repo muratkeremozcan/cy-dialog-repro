@@ -1,7 +1,7 @@
-"use client";
+'use client'
 
-import { useEffect, useRef } from "react";
-import styled from "styled-components";
+import {useEffect, useRef} from 'react'
+import styled from 'styled-components'
 
 const StyledDialog = styled.dialog`
   border: 1px solid #e0e2e2;
@@ -52,14 +52,14 @@ const StyledDialog = styled.dialog`
     flex-direction: column;
     gap: 0.75rem;
   }
-`;
+`
 
-const NewModal = ({ children, footer, header, onClose }) => {
-  const dlgRef = useRef(null);
+const NewModal = ({children, footer, header, onClose}) => {
+  const dlgRef = useRef(null)
 
   useEffect(() => {
-    dlgRef.current.showModal?.();
-  }, [dlgRef]);
+    dlgRef.current.showModal?.()
+  }, [dlgRef])
 
   return (
     <StyledDialog ref={dlgRef}>
@@ -67,7 +67,7 @@ const NewModal = ({ children, footer, header, onClose }) => {
       <div className="content">{children}</div>
       <footer>{footer}</footer>
     </StyledDialog>
-  );
-};
+  )
+}
 
-export default NewModal;
+export default NewModal

@@ -1,12 +1,13 @@
-import ContactModal from ".";
+import '@testing-library/cypress/add-commands'
+import ContactModal from '.'
 
-describe("<ContactModal />", () => {
+describe('<ContactModal />', () => {
   beforeEach(() => {
-    cy.viewport(900, 600);
-  });
+    cy.viewport(900, 600)
+  })
 
-  it("should accept user input", () => {
-    const onClose = cy.stub().as("onClose");
+  it('should accept user input', () => {
+    const onClose = cy.stub().as('onClose')
 
     cy.mount(
       <>
@@ -18,21 +19,19 @@ describe("<ContactModal />", () => {
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt
         mollit anim id est laborum.
         <ContactModal onClose={onClose} />
-      </>
-    );
+      </>,
+    )
 
-    cy.findByRole("textbox", { name: /name/i })
-      .should("exist")
-      .type("Test name");
+    cy.findByRole('textbox', {name: /name/i}).should('exist').type('Test name')
 
-    cy.findByRole("textbox", { name: /email/i })
-      .should("exist")
-      .type("testEmail@email.com");
+    cy.findByRole('textbox', {name: /email/i})
+      .should('exist')
+      .type('testEmail@email.com')
 
-    cy.findByRole("button", { name: /cancel/i })
-      .should("exist")
-      .click();
+    cy.findByRole('button', {name: /cancel/i})
+      .should('exist')
+      .click()
 
-    cy.get("@onClose").should("have.been.calledOnce");
-  });
-});
+    cy.get('@onClose').should('have.been.calledOnce')
+  })
+})

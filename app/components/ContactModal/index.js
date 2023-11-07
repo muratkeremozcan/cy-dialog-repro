@@ -1,10 +1,10 @@
-import NewModal from "../NewModal";
+import NewModal from '../NewModal'
 
-const ContactModal = ({ onClose }) => {
-  const _handleSubmit = (evt) => {
-    evt.preventDefault();
-    console.log("post data");
-  };
+const ContactModal = ({onClose}) => {
+  const _handleSubmit = evt => {
+    evt.preventDefault()
+    console.log('post data')
+  }
   return (
     <NewModal
       footer={
@@ -29,7 +29,7 @@ const ContactModal = ({ onClose }) => {
         </label>
       </form>
     </NewModal>
-  );
-};
+  )
+}
 
-export default ContactModal;
+export default ContactModal
